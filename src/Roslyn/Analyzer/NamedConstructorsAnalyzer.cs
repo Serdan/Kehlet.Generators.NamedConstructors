@@ -11,7 +11,7 @@ using SK = SyntaxKind;
 using static DiagnosticDescriptors;
 
 [DiagnosticAnalyzer(LanguageNames.CSharp)]
-public class GeneratorAnalyzer : DiagnosticAnalyzer
+public class NamedConstructorsAnalyzer : DiagnosticAnalyzer
 {
     public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } =
     [
@@ -26,7 +26,6 @@ public class GeneratorAnalyzer : DiagnosticAnalyzer
             FindStaticContentContainer,
             SK.ClassDeclaration,
             SK.StructDeclaration,
-            SK.InterfaceDeclaration,
             SK.RecordDeclaration,
             SK.RecordStructDeclaration
         );
@@ -34,7 +33,7 @@ public class GeneratorAnalyzer : DiagnosticAnalyzer
 
     private static void FindStaticContentContainer(SyntaxNodeAnalysisContext context)
     {
-        var typeDeclarationNode = (TypeDeclarationSyntax)context.Node;
+        var typeDeclarationNode = (TypeDeclarationSyntax) context.Node;
 
         var attributes = typeDeclarationNode.GetAttributesWithName(context.SemanticModel, StaticContent.MarkerAttributeName);
         if (attributes.IsEmpty)

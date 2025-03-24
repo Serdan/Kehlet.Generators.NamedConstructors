@@ -9,12 +9,12 @@
 
     <PackageId>$(PackageNamespace)</PackageId>
     <Title>$(PackageId)</Title>
-    <Description></Description>
-    <Authors></Authors>
-    <Copyright></Copyright>
+    <Description>Generates named constructors for annotated type.</Description>
+    <Authors>Anders Kehlet</Authors>
+    <Copyright>Anders Kehlet</Copyright>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl></RepositoryUrl>
-    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <Version>0.0.1</Version>
   </PropertyGroup>

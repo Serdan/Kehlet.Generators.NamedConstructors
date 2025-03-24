@@ -1,6 +1,6 @@
 ﻿<Project>
     <PropertyGroup>
-        <PackageNamespace>SourceGeneratorNamespace</PackageNamespace>
+        <PackageNamespace>Kehlet.Generators.NamedConstructors</PackageNamespace>
 
         <GeneratorPath>$(MSBuildThisFileDirectory)Roslyn\Generator</GeneratorPath>
         <AnalyzerPath>$(MSBuildThisFileDirectory)Roslyn\Analyzer</AnalyzerPath>

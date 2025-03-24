@@ -1,24 +1,39 @@
-﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
+﻿using System.Collections.Immutable;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace SourceGeneratorNamespace.Generator;
 
-public partial class SourceGeneratorTypeName
+public partial class NamedConstructorsGenerator
 {
     internal static class Parser
     {
         public static Option<TargetTypeData> Parse(GeneratorAttributeSyntaxContext context, CancellationToken token)
         {
-            var targetNode = (TypeDeclarationSyntax)context.TargetNode;
+            var targetNode = (TypeDeclarationSyntax) context.TargetNode;
 
-            if (targetNode.Modifiers.Any(SyntaxKind.PartialKeyword) is false)
+            var moduleData = SyntaxHelper.GetTargetWithContext(targetNode);
+            if (moduleData.IsNone)
             {
                 return None;
             }
 
-            var moduleData = SyntaxHelper.GetTargetWithContext(targetNode);
-            if (moduleData.IsNone)
+            var builder = ImmutableArray.CreateBuilder<ConstructorData>();
+            foreach (var childNode in targetNode.ChildNodes())
+            {
+                switch (childNode)
+                {
+                    case ConstructorDeclarationSyntax constructorNode:
+                        builder.Add(ConstructorData.New(constructorNode.ParameterList));
+                        break;
+                    case ParameterListSyntax parameterList:
+                        builder.Add(ConstructorData.New(parameterList));
+                        break;
+                }
+            }
+
+            var constructors = builder.ToImmutable();
+            if (constructors.IsDefaultOrEmpty)
             {
                 return None;
             }
@@ -27,7 +42,7 @@ public partial class SourceGeneratorTypeName
 
             return new TargetTypeData(
                 fileName,
-                SomeData: "Include data in the model",
+                CacheArray.Create(constructors),
                 moduleData.UnsafeValue
             );
         }

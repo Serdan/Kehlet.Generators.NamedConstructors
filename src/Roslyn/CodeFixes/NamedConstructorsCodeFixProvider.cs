@@ -11,8 +11,8 @@ namespace SourceGeneratorNamespace.CodeFixes;
 
 using static DiagnosticDescriptors;
 
-[ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(CodeFixProvider)), Shared]
-public sealed class CodeFixProvider : Microsoft.CodeAnalysis.CodeFixes.CodeFixProvider
+[ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(NamedConstructorsCodeFixProvider)), Shared]
+public sealed class NamedConstructorsCodeFixProvider : CodeFixProvider
 {
     public override ImmutableArray<string> FixableDiagnosticIds { get; } = [MissingPartialKeyword.Id];
 

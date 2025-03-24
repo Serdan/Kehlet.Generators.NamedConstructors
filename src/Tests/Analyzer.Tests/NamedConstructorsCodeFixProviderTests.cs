@@ -8,9 +8,9 @@ using Xunit;
 
 namespace Analyzer.Tests;
 
-using Verifier = CSharpCodeFixVerifier<GeneratorAnalyzer, CodeFixProvider, DefaultVerifier>;
+using Verifier = CSharpCodeFixVerifier<NamedConstructorsAnalyzer, NamedConstructorsCodeFixProvider, DefaultVerifier>;
 
-public class CodeFixProviderTests
+public class NamedConstructorsCodeFixProviderTests
 {
     [Fact]
     public async Task FixMissingPartialKeywordDiagnostic()

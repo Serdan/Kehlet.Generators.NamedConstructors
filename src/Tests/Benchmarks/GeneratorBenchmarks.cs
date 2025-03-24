@@ -18,7 +18,7 @@ public class GeneratorBenchmarks
     [GlobalSetup]
     public void Setup()
     {
-        var generator  = new SourceGeneratorTypeName();
+        var generator  = new NamedConstructorsGenerator();
         
         simpleComp = CompilationFactory.PartialClassWithAttribute();
         driver = GeneratorDriverFactory.Default(generator);

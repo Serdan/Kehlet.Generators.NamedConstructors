@@ -12,7 +12,7 @@ public class GeneratorTests
     [Fact]
     public Task GenerateEmptyPartialClass()
     {
-        var generator = new SourceGeneratorTypeName();
+        var generator = new NamedConstructorsGenerator();
         var comp = CompilationFactory.PartialClassWithAttribute();
         var driver = GeneratorDriverFactory.Default(generator).RunGeneratorsAndUpdateCompilation(comp, out var resultComp, out _);
 

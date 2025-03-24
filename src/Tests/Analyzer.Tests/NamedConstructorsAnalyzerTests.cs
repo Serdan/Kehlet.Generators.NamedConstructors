@@ -7,9 +7,9 @@ using Xunit;
 
 namespace Analyzer.Tests;
 
-using Verifier = CSharpAnalyzerVerifier<GeneratorAnalyzer, DefaultVerifier>;
+using Verifier = CSharpAnalyzerVerifier<NamedConstructorsAnalyzer, DefaultVerifier>;
 
-public class GeneratorAnalyzerTests
+public class NamedConstructorsAnalyzerTests
 {
     [Fact]
     public async Task MissingPartialKeywordDiagnostic()

@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="SourceGeneratorTypeName.Parser.cs" DependentUpon="SourceGeneratorTypeName.cs"/>
-    <Compile Update="SourceGeneratorTypeName.Emitter.cs" DependentUpon="SourceGeneratorTypeName.cs"/>
+    <Compile Update="NamedConstructorsGenerator.Parser.cs" DependentUpon="NamedConstructorsGenerator.cs"/>
+    <Compile Update="NamedConstructorsGenerator.Emitter.cs" DependentUpon="NamedConstructorsGenerator.cs"/>
 
     <Compile Include="$(StaticContentPath)\Files\*.cs" Visible="false"/>
   </ItemGroup>
