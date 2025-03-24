@@ -1,7 +1,7 @@
 ﻿using System.Collections.Immutable;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace SourceGeneratorNamespace.Generator;
+namespace Kehlet.Generators.NamedConstructors.Generator;
 
 internal record TargetTypeData(
     string FileName,

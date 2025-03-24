@@ -7,10 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SourceGeneratorNamespace.Common {
-    using System;
-    
-    
+namespace Kehlet.Generators.NamedConstructors.Common {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>

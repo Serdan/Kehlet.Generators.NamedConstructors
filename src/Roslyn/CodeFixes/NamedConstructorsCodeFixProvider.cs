@@ -1,13 +1,13 @@
 using System.Collections.Immutable;
 using System.Composition;
+using Kehlet.Generators.NamedConstructors.Common;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeActions;
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using SourceGeneratorNamespace.Common;
 
-namespace SourceGeneratorNamespace.CodeFixes;
+namespace Kehlet.Generators.NamedConstructors.CodeFixes;
 
 using static DiagnosticDescriptors;
 

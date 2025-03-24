@@ -1,6 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 
-namespace SourceGeneratorNamespace.Common;
+namespace Kehlet.Generators.NamedConstructors.Common;
 
 public static class DiagnosticDescriptors
 {

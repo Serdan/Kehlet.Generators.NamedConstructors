@@ -12,8 +12,8 @@
     <Description>Generates named constructors for annotated type.</Description>
     <Authors>Anders Kehlet</Authors>
     <Copyright>Anders Kehlet</Copyright>
-    <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl></RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Serdan/Kehlet.Generators.NamedConstructors</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Serdan/Kehlet.Generators.NamedConstructors</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <Version>0.0.1</Version>

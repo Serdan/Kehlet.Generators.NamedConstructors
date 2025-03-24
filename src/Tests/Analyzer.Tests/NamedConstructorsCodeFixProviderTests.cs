@@ -1,8 +1,8 @@
+using Kehlet.Generators.NamedConstructors.Analyzer;
+using Kehlet.Generators.NamedConstructors.CodeFixes;
+using Kehlet.Generators.NamedConstructors.Common;
 using Microsoft.CodeAnalysis.CSharp.Testing;
 using Microsoft.CodeAnalysis.Testing;
-using SourceGeneratorNamespace.Analyzer;
-using SourceGeneratorNamespace.CodeFixes;
-using SourceGeneratorNamespace.Common;
 using Tests.Common;
 using Xunit;
 

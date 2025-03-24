@@ -1,8 +1,8 @@
+using Kehlet.Generators.NamedConstructors.Common;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using SourceGeneratorNamespace.Common;
 
-namespace SourceGeneratorNamespace.Generator;
+namespace Kehlet.Generators.NamedConstructors.Generator;
 
 using static TargetFilterOptions;
 using static StaticContent;
@@ -15,7 +15,7 @@ public partial class NamedConstructorsGenerator : IIncrementalGenerator
         context.RegisterPostInitializationOutput(ctx =>
         {
             ctx.AddSource<EmbeddedAttribute>(EmbeddedAttributeSource);
-            ctx.AddSource(MarkerAttributeFileName, MarkerAttributeSource);
+            ctx.AddSource(MarkerAttributeFileName, WithNamedConstructorsAttributeSource);
         });
 
         var typeValues = context.CreateTargetProvider(MarkerAttributeName, Partial, ConcreteType, Parser.Parse).Choose();

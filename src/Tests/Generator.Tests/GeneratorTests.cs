@@ -1,5 +1,5 @@
-﻿using Microsoft.CodeAnalysis;
-using SourceGeneratorNamespace.Generator;
+﻿using Kehlet.Generators.NamedConstructors.Generator;
+using Microsoft.CodeAnalysis;
 using Tests.Common;
 
 namespace Generator.Tests;

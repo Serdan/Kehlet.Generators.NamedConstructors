@@ -1,8 +1,8 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
 using BenchmarkDotNet.Jobs;
+using Kehlet.Generators.NamedConstructors.Generator;
 using Microsoft.CodeAnalysis;
-using SourceGeneratorNamespace.Generator;
 using Tests.Common;
 
 namespace Benchmarks;

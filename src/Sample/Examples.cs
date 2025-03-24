@@ -1,11 +1,11 @@
-using SourceGeneratorNamespace;
+using Kehlet.Generators.NamedConstructors.Files;
 
 namespace Sample;
 
-[Marker]
+[WithNamedConstructors]
 public class TargetType;
 
-[Marker]
+[WithNamedConstructors]
 public partial class TargetType2(string s)
 {
     public TargetType2(): this("") { }

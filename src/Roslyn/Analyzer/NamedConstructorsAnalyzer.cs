@@ -1,11 +1,11 @@
 ﻿using System.Collections.Immutable;
+using Kehlet.Generators.NamedConstructors.Common;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
-using SourceGeneratorNamespace.Common;
 
-namespace SourceGeneratorNamespace.Analyzer;
+namespace Kehlet.Generators.NamedConstructors.Analyzer;
 
 using SK = SyntaxKind;
 using static DiagnosticDescriptors;

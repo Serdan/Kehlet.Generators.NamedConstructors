@@ -2,7 +2,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace SourceGeneratorNamespace.Generator;
+namespace Kehlet.Generators.NamedConstructors.Generator;
 
 public partial class NamedConstructorsGenerator
 {

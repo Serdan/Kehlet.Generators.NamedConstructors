@@ -1,5 +1,5 @@
 ﻿using Kehlet.Generators.LoadAdditionalFiles;
-using SourceGeneratorNamespace.Common;
+using Kehlet.Generators.NamedConstructors.Common;
 
 namespace Tests.Common;
 
@@ -24,7 +24,7 @@ public static partial class SR
         using System;
         using Microsoft.CodeAnalysis;
         using {{StaticContent.MarkerAttributeNamespace}};
-        {{(includeGeneratorTypes ? MarkerAttributeSource : "")}}
+        {{(includeGeneratorTypes ? WithNamedConstructorsAttributeSource : "")}}
 
         namespace MyTestNamespace.SubNamespace
         {
@@ -40,7 +40,7 @@ public static partial class SR
         using System;
         using Microsoft.CodeAnalysis;
         using {{StaticContent.MarkerAttributeNamespace}};
-        {{(includeGeneratorTypes ? MarkerAttributeSource : "")}}
+        {{(includeGeneratorTypes ? WithNamedConstructorsAttributeSource : "")}}
 
         namespace MyTestNamespace.SubNamespace
         {
