@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    
+    <AssemblyName>$(PackageName).Sample</AssemblyName>
+    <RootNamespace>$(AssemblyName)</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(GeneratorPath)\Generator.csproj" OutputItemType="Analyzer" />
+    <ProjectReference Include="$(AnalyzerPath)\Analyzer.csproj" OutputItemType="Analyzer" />
+    <ProjectReference Include="$(CodeFixesPath)\CodeFixes.csproj" OutputItemType="Analyzer" />
+    <ProjectReference Include="$(CommonPath)\Common.csproj" OutputItemType="Analyzer" />
+  </ItemGroup>
+
+</Project>

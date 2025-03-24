@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>$(PackageNamespace).Generator</AssemblyName>
+    <RootNamespace>$(AssemblyName)</RootNamespace>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Useful primitives for C# source generators. -->
+    <PackageReference Include="Kehlet.SourceGenerator.Prelude"
+                      Version="1.3.0"
+                      PrivateAssets="all"
+                      IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive"/>
+    <!-- Source generator for language features that aren't supported by netstandard2.0 -->
+    <PackageReference Include="Meziantou.Polyfill"
+                      Version="1.0.42"
+                      PrivateAssets="all"
+                      IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="SourceGeneratorTypeName.Parser.cs" DependentUpon="SourceGeneratorTypeName.cs"/>
+    <Compile Update="SourceGeneratorTypeName.Emitter.cs" DependentUpon="SourceGeneratorTypeName.cs"/>
+
+    <Compile Include="$(StaticContentPath)\Files\*.cs" Visible="false"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(CommonPath)\Common.csproj"/>
+  </ItemGroup>
+
+</Project>
