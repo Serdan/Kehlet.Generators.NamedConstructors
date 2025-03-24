@@ -24,15 +24,15 @@ public static partial class SR
         using System;
         using Microsoft.CodeAnalysis;
         using {{StaticContent.MarkerAttributeNamespace}};
-        {{(includeGeneratorTypes ? WithNamedConstructorsAttributeSource : "")}}
 
         namespace MyTestNamespace.SubNamespace
         {
-            [Marker]
+            [WithNamedConstructors]
             public class MyTestClass;
         }
 
         {{(includeGeneratorTypes ? EmbeddedAttribute : "")}}
+        {{(includeGeneratorTypes ? WithNamedConstructorsAttributeSource : "")}}
         """;
 
     public static string GetPartialClassWithAttribute(bool includeGeneratorTypes = false) =>
@@ -40,14 +40,14 @@ public static partial class SR
         using System;
         using Microsoft.CodeAnalysis;
         using {{StaticContent.MarkerAttributeNamespace}};
-        {{(includeGeneratorTypes ? WithNamedConstructorsAttributeSource : "")}}
 
         namespace MyTestNamespace.SubNamespace
         {
-            [Marker]
+            [WithNamedConstructors]
             public partial class MyTestClass;
         }
 
         {{(includeGeneratorTypes ? EmbeddedAttribute : "")}}
+        {{(includeGeneratorTypes ? WithNamedConstructorsAttributeSource : "")}}
         """;
 }

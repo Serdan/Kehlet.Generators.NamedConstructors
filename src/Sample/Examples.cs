@@ -1,4 +1,4 @@
-using Kehlet.Generators.NamedConstructors.Files;
+using Kehlet.Generators.NamedConstructors;
 
 namespace Sample;
 

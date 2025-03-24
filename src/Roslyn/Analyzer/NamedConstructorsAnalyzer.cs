@@ -23,7 +23,7 @@ public class NamedConstructorsAnalyzer : DiagnosticAnalyzer
         context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
         context.EnableConcurrentExecution();
         context.RegisterSyntaxNodeAction(
-            FindStaticContentContainer,
+            FindTargetType,
             SK.ClassDeclaration,
             SK.StructDeclaration,
             SK.RecordDeclaration,
@@ -31,7 +31,7 @@ public class NamedConstructorsAnalyzer : DiagnosticAnalyzer
         );
     }
 
-    private static void FindStaticContentContainer(SyntaxNodeAnalysisContext context)
+    private static void FindTargetType(SyntaxNodeAnalysisContext context)
     {
         var typeDeclarationNode = (TypeDeclarationSyntax) context.Node;
 

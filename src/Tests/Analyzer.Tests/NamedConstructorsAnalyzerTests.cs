@@ -17,7 +17,7 @@ public class NamedConstructorsAnalyzerTests
         var text = SR.GetClassWithAttribute(true);
 
         var expected = Verifier.Diagnostic(DiagnosticDescriptors.MissingPartialKeyword)
-                               .WithSpan(19, 18, 19, 29);
+                               .WithSpan(8, 18, 8, 29);
 
         await Verifier.VerifyAnalyzerAsync(text, expected);
     }

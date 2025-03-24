@@ -14,8 +14,11 @@ public class GeneratorTests
     {
         var generator = new NamedConstructorsGenerator();
         var comp = CompilationFactory.PartialClassWithAttribute();
-        var driver = GeneratorDriverFactory.Default(generator).RunGeneratorsAndUpdateCompilation(comp, out var resultComp, out _);
+        var driver = GeneratorDriverFactory.Default(generator).RunGeneratorsAndUpdateCompilation(comp, out var resultComp, out var d);
 
+        var compdiags = comp.GetDiagnostics();
+        var resultDiags = resultComp.GetDiagnostics();
+        
         var result = driver.GetRunResult().Results.Single();
         Assert.Empty(resultComp.GetDiagnostics().Where(x => x.Severity is not (DiagnosticSeverity.Info or DiagnosticSeverity.Hidden)));
         Assert.Equal(3, result.GeneratedSources.Length);
